@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::auth();
+
+Route::get('/', 'IndexController@index');
+Route::get('/home', 'IndexController@index');
+$this->get('logout', 'Auth\LoginController@logout')->name('logout');
